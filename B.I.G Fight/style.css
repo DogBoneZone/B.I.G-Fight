@@ -1,0 +1,49 @@
+/* ---------------------------------
+    Global
+ ----------------------------------- */
+html {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* ---------------------------------
+    Character Select Screen
+ ----------------------------------- */
+
+.screenContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.characterScreen {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.selectButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.fighterProfile {
+    text-align: center;
+}
+
+.fighterProfile img {
+    height: 250px;
+    width: 250px;
+}
+
+/* .characterCard {
+    display: none;
+} */
+
+.characterCard .active {
+    display: unset;
+}

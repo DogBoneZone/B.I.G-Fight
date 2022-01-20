@@ -1,0 +1,11 @@
+
+.fightPageContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.statusHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
