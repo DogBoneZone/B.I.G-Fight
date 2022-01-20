@@ -41,7 +41,7 @@ export function createCharacters() {
             name: 'Colin', 
             img: './images/fighters/colinthemachine.png', 
             special: {name: 'Bio-Hack', dmg: 3, acc: 65},
-            info: 'Colin initiates an elaborate hacking technique that allows him to deal extra damage over time.'
+            info: 'Colin initiates a hacking technique that allows him to deal damage over time.'
         }
     ]
 
@@ -75,7 +75,9 @@ function setCharacterCard(fighterCards, newIndex) {
     else if (newIndex < 0) {newIndex = fighterCards.length - 1}
 
     let card = fighterCards[newIndex]
-    document.querySelector('.fighterProfile').append(card)
+    if (document.querySelector('.fighterProfile') != null) {
+        document.querySelector('.fighterProfile').append(card)
+    }
 }
 
 // add listeners to buttons
@@ -94,11 +96,14 @@ function addListeners() {
     }
 
     // Begin Fight Button
-    document.querySelector('#beginFight').addEventListener('click', () => {
-        sessionStorage.setItem('selectedCharacter', document.querySelector('.characterCard').dataset.activeIndex)
-        sessionStorage.setItem('rivalCharacter', Math.floor(Math.random() * createCharacters.length))
-        window.location.href = "fight-page.html"
-    })
+    if (document.querySelector('#beginFight') != null) {
+        document.querySelector('#beginFight').addEventListener('click', () => {
+            sessionStorage.setItem('selectedCharacter', document.querySelector('.characterCard').dataset.activeIndex)
+            sessionStorage.setItem('rivalCharacter', Math.floor(Math.random() * createCharacters.length))
+            // window.location.href = "fight-page.html"
+            window.location = 'fight-page.html'
+        })
+    }
 
 }
 

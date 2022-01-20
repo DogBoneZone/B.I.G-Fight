@@ -3,6 +3,8 @@
 ------------------------------- */
 html {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    /* background-image: url('./images/elements/office-background.webp'); */
+    color: red;
 }
 
 
@@ -21,4 +23,5 @@ html {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background: red;
 }
