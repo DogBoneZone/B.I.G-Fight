@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js" defer></script>
+    <script type="module" src="script.js" defer></script>
     <link rel="stylesheet" href="style.css"></link>
     <title>B.I.G Fight!</title>
 </head>
@@ -12,25 +12,18 @@
     <div class="screenContainer">
         <div class="directionsHeader">
             <h1>
-                CHOOSE YOUR FIGHTERS!
+                CHOOSE YOUR FIGHTER!
             </h1>
         </div>
         <div class="characterScreen">
-            <div class="fighter1">
-                <div class="fighterProfile"></div>
+            <div class="fighterSelect">
+                <div class="fighterProfile" data-active-index="0" data-active-character="Alex"></div>
                 <div class="selectButtons">
-                    <button type="button">(=</button>
-                    <button type="button">=)</button>
+                    <button type="button" class="select" data-btn-direction="decrease">PREV</button>
+                    <button type="button" class="select" data-btn-direction="increase">NEXT</button>
                 </div>
-            </div>
-            <div class="centerLogo">
-
-            </div>
-            <div class="fighter2">
-                <div class="fighterProfile"></div>
-                <div class="selectButtons">
-                    <button type="button">(=</button>
-                    <button type="button">=)</button>
+                <div>
+                    <button type="button" id="beginFight">ENTER THE FRAY!</button>
                 </div>
             </div>
         </div>
