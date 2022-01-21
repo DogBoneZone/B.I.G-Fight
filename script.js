@@ -19,6 +19,10 @@ export function createCharacters() {
         kick() {
             return {dmg: 2, acc: 75}
         }
+
+        defend() {
+            return {defense: 2,  acc: 95}
+        }
     }
 
     // Fighter List Data
@@ -40,8 +44,15 @@ export function createCharacters() {
         {
             name: 'Colin', 
             img: './images/fighters/colinthemachine.png', 
-            special: {name: 'Bio-Hack', dmg: 3, acc: 65},
+            special: {name: 'Bio-Hack', dmg: 2, acc: 65},
             info: 'Colin initiates a hacking technique that allows him to deal damage over time.'
+        },
+
+        {
+            name: 'Anthony', 
+            img: './images/fighters/anthony.webp', 
+            special: {name: 'Magic Blast', dmg: 4, acc: 50},
+            info: 'Anthony blasts a beam of magic toward his opponents.'
         }
     ]
 
@@ -89,7 +100,6 @@ function addListeners() {
         btn.addEventListener('click', () => {
             let currentIndex = Number(document.querySelector('.characterCard').dataset.activeIndex)
             let newIndex = btn.dataset.btnDirection == 'increase' ? currentIndex + 1 : currentIndex - 1
-            console.log(newIndex)
             setCharacterCard(createFighterCards(createCharacters()), newIndex)
             document.querySelector('.characterCard').remove()
         })
@@ -99,8 +109,7 @@ function addListeners() {
     if (document.querySelector('#beginFight') != null) {
         document.querySelector('#beginFight').addEventListener('click', () => {
             sessionStorage.setItem('selectedCharacter', document.querySelector('.characterCard').dataset.activeIndex)
-            sessionStorage.setItem('rivalCharacter', Math.floor(Math.random() * createCharacters.length))
-            // window.location.href = "fight-page.html"
+            sessionStorage.setItem('rivalCharacter', Math.floor(Math.random() * createCharacters().length))
             window.location = 'fight-page.html'
         })
     }

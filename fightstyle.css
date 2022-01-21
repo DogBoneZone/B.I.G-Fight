@@ -3,8 +3,7 @@
 ------------------------------- */
 html {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    /* background-image: url('./images/elements/office-background.webp'); */
-    color: red;
+    background-color: rgb(255, 36, 36);
 }
 
 
@@ -19,9 +18,72 @@ html {
     flex-direction: column;
 }
 
-.statusHeader {
+.fightHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+}
+
+.fightArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-image: url('./images/elements/dark-scene.gif'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 500px;
+    padding: 0 10px 20px 10px;
+}
+
+.statusBars {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background: red;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+
+.hpMax {
+    background: rgba(228, 228, 228, 0.589);
+    width: 150px;
+    height: 25px;
+    border: 1px solid white;
+}
+
+.hpCurrent {
+    background: rgba(255, 0, 0, 0.822);
+    height: 25px;
+}
+
+.fighterPositions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sprite {
+    height: 150px;
+    width: 150px;
+}
+
+.moveButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+
+/* Styling for larger screens */
+@media screen and (min-width: 650px) {
+    .hpMax {
+        width: 300px;
+    }
 }

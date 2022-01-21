@@ -12,31 +12,30 @@
 </head>
 <body>
     <div class="fightPageContainer">
-        <div class="statusHeader">
-            <div class="fighter1Status">
-                <div>Fighter1 Name</div>
-                <div class="hpMax">
-                    <div class="hpCurrent"></div>
-                </div>
-            </div>
+        <div class="fightHeader">
             <div>
                 <button type="button" id="goToSelectScreen">Return to Lobby</button>
-            </div>
-            <div class="fighter2Status">
-                <div>Fighter2 Name</div>
-                <div class="hpMax">
-                    <div class="hpCurrent"></div>
-                </div>
             </div>
         </div>
 
         <div class="fightArea">
-            <div class="position1">
-                <img>
+            <div class="statusBars">
+                <div class="fighter1Status"></div>
+                <div class="fighter2Status"></div>
             </div>
-            <div class="position2">
-                <img>
+            <div class="fighterPositions">
+                <div class="position1">
+                    <img>
+                </div>
+                <div class="position2">
+                    <img>
+                </div>
             </div>
+        </div>
+        <div class="moveButtons">
+            <button type="button" class="move" id="punch">Punch</button>
+            <button type="button" class="move" id="kick">Kick</button>
+            <button type="button" class="move" id="defend">Defend</button>
         </div>
     </div>
 </body>
