@@ -63,6 +63,7 @@ html {
     color: white;
     min-height: 300px;
     width: 100%;
+    box-shadow: 10px 10px 10px black;
 }
 
 .fighter1Status, .fighter2Status {
@@ -151,7 +152,7 @@ html {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding: 10px;
+    padding: 20px;
 }
 
 .active {
