@@ -1,8 +1,13 @@
 /* ----------------------------
     Global 
 ------------------------------- */
+@font-face {
+    font-family: "Game Sans Serif";
+    src: url('./fonts/game_sans_serif_7.ttf');
+}
+
 html {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: "Game Sans Serif";
     background-color: rgb(255, 36, 36);
 }
 
@@ -10,12 +15,36 @@ html {
 
 
 /* ----------------------------
-    Status Bars
+    Begin Fight Form
 ------------------------------- */
+.beginFightForm {
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(51, 51, 51, 0.616);
+    color: white;
+    font-size: small;
+    text-align: center;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.beginFightForm .formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
 
 .fightPageContainer {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .fightHeader {
@@ -26,37 +55,81 @@ html {
 }
 
 .fightArea {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* background-image: url('./images/elements/dark-scene.gif'); */
+    position: relative;
     background-repeat: no-repeat;
-    background-size: cover;
     background-position: center;
-    min-height: 500px;
-    padding: 0 10px 20px 10px;
-}
-
-.statusBars {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    background-size: cover;
     text-align: center;
     color: white;
+    min-height: 300px;
+    width: 100%;
+}
+
+.fighter1Status, .fighter2Status {
     padding: 10px;
+    background: rgba(43, 43, 43, 0.493);
+    border-radius: 10px;
+}
+
+.fighter1Status {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.fighter2Status {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.statusContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: small;
+}
+
+.position1 {
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+}
+
+.position2 {
+    position: absolute;
+    bottom: 5px;
+    right: 20px;
 }
 
 .hpMax {
     background: rgba(228, 228, 228, 0.589);
     width: 150px;
-    height: 25px;
+    height: 10px;
     border: 1px solid white;
+    border-radius: 10px;
 }
 
 .hpCurrent {
+    transition: 0.5s;
     background: rgba(255, 0, 0, 0.822);
-    height: 25px;
+    height: 10px;
+    border-radius: 10px;
+}
+
+.energyMax {
+    background: rgba(228, 228, 228, 0.589);
+    width: 120px;
+    height: 5px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.energyCurrent {
+    transition: 0.5s;
+    background: rgba(246, 250, 9, 0.822);
+    height: 5px;
+    border-radius: 10px;
 }
 
 .fighterPositions {
@@ -67,11 +140,12 @@ html {
 }
 
 .sprite {
-    height: 150px;
-    width: 150px;
+    height: 50px;
+    width: 50px;
 }
 
 .moveButtons {
+    visibility: hidden;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -80,10 +154,61 @@ html {
     padding: 10px;
 }
 
+.active {
+    visibility: visible;
+}
+
+.winner {
+    transition: 0.5s;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
 
 /* Styling for larger screens */
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 700px) {
+    .beginFightForm {
+        font-size: xx-large;
+    }
+
+    .statusContainer {
+        font-size: xx-large;
+    }
+    
     .hpMax {
         width: 300px;
     }
+
+    .sprite {
+        height: 150px;
+        width: 150px;
+    }
+
+    .fightArea {
+        min-height: 600px;
+        max-width: 1200px;
+    }
+
+    .position1, .position2 {
+        bottom: 20px;
+    }
+
+    .hpMax {
+        height: 25px;
+    }
+
+    .hpCurrent {
+        height: 25px;
+    }
+
+    .energyMax {
+        width: 250px;
+    }
+
+    .energyCurrent {
+        width: 250px;
+    }
+
+    
 }

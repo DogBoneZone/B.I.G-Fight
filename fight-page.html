@@ -15,22 +15,19 @@
         <div class="fightHeader">
             <div>
                 <button type="button" id="goToSelectScreen">Return to Lobby</button>
+                <button type="button" id="audioToggle">Toggle Music</button>
+                <audio id="audioTag" src="./audio/guile-theme.ogg"></audio>
             </div>
         </div>
 
         <div class="fightArea">
-            <div class="statusBars">
-                <div class="fighter1Status"></div>
-                <div class="fighter2Status"></div>
+            <div class="beginFightForm active">
+                <div class="formContainer"></div>
             </div>
-            <div class="fighterPositions">
-                <div class="position1">
-                    <img>
-                </div>
-                <div class="position2">
-                    <img>
-                </div>
-            </div>
+            <div class="fighter1Status"></div>
+            <div class="fighter2Status"></div>
+            <div class="position1"></div>
+            <div class="position2"></div>
         </div>
         <div class="moveButtons">
             <button type="button" class="move" id="punch">Punch</button>

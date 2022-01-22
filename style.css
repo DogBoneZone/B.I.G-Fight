@@ -1,8 +1,13 @@
 /* ---------------------------------
     Global
  ----------------------------------- */
+ @font-face {
+    font-family: "Game Sans Serif";
+    src: url('./fonts/game_sans_serif_7.ttf');
+}
+
 html {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: "Game Sans Serif";
     background-color: rgb(255, 36, 36);
 }
 
@@ -64,6 +69,16 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 500px;
+    height: 400px;
     gap: 20px;
+}
+
+@media screen and (min-width: 650px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
+    .screenContainer {
+        width: 50%;
+    }
 }

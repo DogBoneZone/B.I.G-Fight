@@ -5,6 +5,7 @@ export function createCharacters() {
             this.name = data.name
             this.img = data.img
             this.hp = {max: 10, current: 10}
+            this.energy = {max: 10, current: 10}
             this.special = data.special,
             this.info = data.info
             this.card = `<h2>${data.name}</h2>
@@ -21,7 +22,7 @@ export function createCharacters() {
         }
 
         defend() {
-            return {defense: 2,  acc: 95}
+            return {defense: 2,  acc: 95, energyRegen: 3}
         }
     }
 
@@ -30,28 +31,28 @@ export function createCharacters() {
         {
             name: 'Alex', 
             img: './images/fighters/parallel.jpg', 
-            special: {name: 'Dragon Kick', dmg: 5, acc: 40},
+            special: {name: 'Dragon Kick', dmg: 5, acc: 40, cost: 3},
             info: 'Alex can use Dragon Kick, a low accuracy but highly powerful attack.'
         },
     
         {
             name: 'Andrew', 
-            img: './images/fighters/andrewbuff.jpg', 
-            special: {name: 'Flash Stomp', dmg: 3, acc: 65},
+            img: './images/fighters/andrew-profile.gif', 
+            special: {name: 'Flash Stomp', dmg: 3, acc: 65, cost: 5},
             info: 'Andrew can use a quick stomp attack for moderate damage and accuracy.'
         },
         
         {
             name: 'Colin', 
-            img: './images/fighters/colinthemachine.png', 
-            special: {name: 'Bio-Hack', dmg: 2, acc: 65},
+            img: './images/fighters/colin-profile.gif', 
+            special: {name: 'Bio-Hack', dmg: 2, acc: 65, cost: 4},
             info: 'Colin initiates a hacking technique that allows him to deal damage over time.'
         },
 
         {
             name: 'Anthony', 
-            img: './images/fighters/anthony.webp', 
-            special: {name: 'Magic Blast', dmg: 4, acc: 50},
+            img: './images/fighters/anthony-profile.gif', 
+            special: {name: 'Magic Blast', dmg: 2, acc: 75, cost: 2},
             info: 'Anthony blasts a beam of magic toward his opponents.'
         }
     ]
@@ -110,6 +111,15 @@ function addListeners() {
         document.querySelector('#beginFight').addEventListener('click', () => {
             sessionStorage.setItem('selectedCharacter', document.querySelector('.characterCard').dataset.activeIndex)
             sessionStorage.setItem('rivalCharacter', Math.floor(Math.random() * createCharacters().length))
+
+            switch (sessionStorage.getItem('selectedCharacter') === sessionStorage.getItem('rivalCharacter')) {
+                case true:
+                    sessionStorage.getItem('selectedCharacter') == 0 ? sessionStorage.setItem('rivalCharacter', Number(sessionStorage.getItem('selectedCharacter') + 1)) : sessionStorage.setItem('rivalCharacter', Number(sessionStorage.getItem('selectedCharacter') - 1))
+                    break
+
+                case false: 
+                break
+            }
             window.location = 'fight-page.html'
         })
     }
